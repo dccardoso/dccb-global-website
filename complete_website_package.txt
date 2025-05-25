@@ -1,0 +1,133 @@
+INSTRUÇÕES PARA CRIAR O REPOSITÓRIO NO GITHUB
+===============================================
+
+1. ACESSE: https://github.com
+2. CLIQUE: "New repository" (botão verde)
+3. NOME: dccb-global-website
+4. DESCRIÇÃO: Website oficial DCCB Global - Óleos Essenciais DoTerra
+5. MARQUE: ✅ Public
+6. MARQUE: ✅ Add a README file
+7. CLIQUE: "Create repository"
+
+Depois de criar, você verá uma página com o repositório vazio.
+
+COMO ADICIONAR OS ARQUIVOS:
+==========================
+
+MÉTODO 1 - Via Interface Web (Mais Fácil):
+------------------------------------------
+1. Na página do seu repositório, clique "Add file" → "Create new file"
+2. Para cada arquivo abaixo, crie um novo arquivo com o nome exato
+3. Copie e cole o conteúdo correspondente
+4. Clique "Commit changes" para cada arquivo
+
+MÉTODO 2 - Upload Direto:
+------------------------
+1. Baixe todos os arquivos no seu computador
+2. No GitHub, clique "Add file" → "Upload files"
+3. Arraste todos os arquivos de uma vez
+4. Clique "Commit changes"
+
+===============================================
+ARQUIVOS PARA CRIAR:
+===============================================
+
+📄 ARQUIVO: index.html
+📄 CONTEÚDO: [Ver no primeiro artifact que criei - código HTML completo]
+
+---
+
+📄 ARQUIVO: _redirects
+📄 CONTEÚDO: 
+https://www.dccbglobal.com/* https://dccbglobal.com/:splat 301!
+/ebook-concurseiros     /ebooks#concurseiros    302
+/ebook-juridico         /ebooks#juridico        302
+/ebook-tech            /ebooks#tech            302
+/whatsapp              https://wa.me/5511999999999  302
+/instagram             https://instagram.com/dccbglobal  302
+/*    /index.html   200
+
+---
+
+📄 ARQUIVO: _headers
+📄 CONTEÚDO:
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self'
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+---
+
+📄 ARQUIVO: README.md
+📄 CONTEÚDO:
+# 🌿 DCCB Global - Óleos Essenciais DoTerra
+
+Website oficial especializado em óleos essenciais DoTerra.
+
+## 🚀 Deploy no Cloudflare Pages
+
+1. Conecte este repositório ao Cloudflare Pages
+2. Branch: main
+3. Build command: (vazio)
+4. Output directory: /
+5. Configure domínio: dccbglobal.com
+
+## 📱 Funcionalidades
+
+- ✅ Design responsivo e profissional
+- ✅ Chatbox interativo
+- ✅ Seção de e-books especializados
+- ✅ Otimizado para SEO e performance
+- ✅ Headers de segurança configurados
+
+Desenvolvido com 💙 para transformar vidas.
+
+---
+
+📄 ARQUIVO: .gitignore
+📄 CONTEÚDO:
+.DS_Store
+*.log
+node_modules/
+.env
+.vscode/
+.idea/
+*.tmp
+dist/
+build/
+
+===============================================
+APÓS CRIAR O REPOSITÓRIO:
+===============================================
+
+1. ✅ Todos os arquivos criados no GitHub
+2. ✅ Repositório público e organizador
+
+PRÓXIMO PASSO - CONECTAR AO CLOUDFLARE:
+======================================
+
+1. ACESSE: https://dash.cloudflare.com
+2. VÁ EM: Workers & Pages → Pages
+3. CLIQUE: "Create a project"
+4. ESCOLHA: "Connect to Git"
+5. AUTORIZE: GitHub
+6. SELECIONE: seu repositório "dccb-global-website"
+7. CONFIGURE:
+   - Project name: dccb-global
+   - Production branch: main
+   - Build command: (deixe vazio)
+   - Build output directory: /
+8. CLIQUE: "Save and Deploy"
+9. APÓS DEPLOY: Custom domains → Add "dccbglobal.com"
+
+TEMPO TOTAL: 10-15 minutos
+RESULTADO: Site online em https://dccbglobal.com
+
+===============================================

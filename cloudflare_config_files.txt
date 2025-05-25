@@ -1,0 +1,99 @@
+# _redirects
+# Arquivo de redirecionamentos para Cloudflare Pages
+# Salve este arquivo como "_redirects" (sem extensão) na raiz do projeto
+
+# Redirecionar www para não-www (SEO e consistência)
+https://www.dccbglobal.com/* https://dccbglobal.com/:splat 301!
+
+# Páginas específicas (futuras expansões)
+/ebook-concurseiros     /ebooks#concurseiros    302
+/ebook-juridico         /ebooks#juridico        302
+/ebook-tech            /ebooks#tech            302
+/whatsapp              https://wa.me/5511999999999  302
+/instagram             https://instagram.com/dccbglobal  302
+
+# Fallback para SPA (Single Page Application)
+/*    /index.html   200
+
+---
+
+# _headers
+# Arquivo de headers para segurança e performance
+# Salve este arquivo como "_headers" (sem extensão) na raiz do projeto
+
+/*
+  # Security Headers
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  
+  # Performance Headers
+  Cache-Control: public, max-age=31536000, immutable
+  
+  # Content Security Policy (básico)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self'
+
+# Headers específicos para HTML
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Headers para CSS e JS
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: text/css
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: application/javascript
+
+---
+
+# .gitignore
+# Arquivo para ignorar arquivos desnecessários no Git
+# Salve este arquivo como ".gitignore" na raiz do projeto
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# dotenv environment variables file
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
